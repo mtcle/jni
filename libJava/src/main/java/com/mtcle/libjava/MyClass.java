@@ -2,7 +2,7 @@ package com.mtcle.libjava;
 
 public class MyClass {
     public static void main(String[] a){
-
+//bug fixed~~~
     }
 
     int getNextInterval(final int interval, final boolean increase) {
