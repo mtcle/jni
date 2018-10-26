@@ -41,6 +41,7 @@ public class MainTabActivity extends AppCompatActivity {
     static {
         System.loadLibrary("native-lib");
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,6 +113,8 @@ public class MainTabActivity extends AppCompatActivity {
             // Return a PlaceholderFragment (defined as a static inner class below).
             if (position == 0) {
                 return JavaCallNativeFragment.newInstance(position + 1);
+            } else if (position == 1) {
+                return NativeCallJavaFragment.newInstance(position + 1);
             } else {
                 return JavaCallNativeFragment.newInstance(position + 1);
             }

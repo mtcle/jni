@@ -9,16 +9,17 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_string"
+            android:id="@+id/btn_ccalljava"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="获取c中字符串" />
+            android:text="C调java方法" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_string_p"
+            android:id="@+id/btn_ccall_java_p"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="获取c中字符串（带参）" />
+            android:text="C调java方法（c中传参）" />
+
 
     </LinearLayout>
 
