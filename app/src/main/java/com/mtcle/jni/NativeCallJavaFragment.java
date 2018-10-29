@@ -61,6 +61,10 @@ public class NativeCallJavaFragment extends Fragment implements View.OnClickList
                 String str = mNativeUtil.getStringFromJNIWithJavaMeth();
                 ViewUtils.showToast(getContext(), "返回值：" + str);
                 break;
+            case R.id.btn_ccall_java_p:
+                String resultP=mNativeUtil.getStringFromJNIWithJavaMethWithCParma();
+                ViewUtils.showToast(getContext(),"返回值："+resultP);
+                break;
         }
     }
 }

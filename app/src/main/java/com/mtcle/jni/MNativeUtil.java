@@ -31,4 +31,17 @@ public class MNativeUtil {
         Log.e("mtcle", "java方法javaM被调用！");
         return "java中文";
     }
+
+
+    /**
+     * c中调用java方法，需要传递参数
+     *
+     * @return
+     */
+    public native String getStringFromJNIWithJavaMethWithCParma();
+
+    public String javaMWithP(int cParma, String cParma2) {
+        Log.e("mtcle", "java方法javaMWithP被调用！");
+        return "java中文[c中参数:" + cParma + "、" + cParma2 + "]";
+    }
 }
