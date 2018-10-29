@@ -17,22 +17,20 @@
         <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="字符串操作" />
+            android:text="加解密处理" />
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="字符串操作" />
+            android:text="线程操作" />
+
 
         <android.support.v7.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="字符串操作" />
+            android:text="开发中" />
 
-        <android.support.v7.widget.AppCompatButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="字符串操作" />
+
     </LinearLayout>
 
 </ScrollView>
