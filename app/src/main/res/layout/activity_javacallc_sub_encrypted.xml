@@ -9,29 +9,34 @@
         android:orientation="vertical">
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_string"
+            android:id="@+id/btn_md5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="字符串操作" />
+            android:text="简单md5" />
 
         <android.support.v7.widget.AppCompatButton
-            android:id="@+id/btn_encryption"
+            android:id="@+id/btn_hash"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="加解密处理" />
+            android:text="做hash" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_aes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="线程操作" />
-
+            android:text="做aes" />
 
         <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_3des"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="开发中" />
+            android:text="做3des" />
 
-
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_rsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="做rsa" />
     </LinearLayout>
 
 </ScrollView>

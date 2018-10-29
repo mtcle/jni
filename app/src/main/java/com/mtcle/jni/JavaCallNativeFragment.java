@@ -49,6 +49,7 @@ public class JavaCallNativeFragment extends Fragment implements View.OnClickList
 
     private void initUi(View rootView) {
         rootView.findViewById(R.id.btn_string).setOnClickListener(this);
+        rootView.findViewById(R.id.btn_encryption).setOnClickListener(this);
     }
 
 
@@ -57,6 +58,9 @@ public class JavaCallNativeFragment extends Fragment implements View.OnClickList
         switch (v.getId()) {
             case R.id.btn_string:
                 startActivity(new Intent(getContext(), JCCSubStringActivity.class));
+                break;
+            case R.id.btn_encryption:
+                startActivity(new Intent(getContext(), JCCSubEncrypteActivity.class));
                 break;
         }
     }

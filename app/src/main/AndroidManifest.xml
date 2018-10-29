@@ -21,6 +21,7 @@
         <activity
             android:name=".JCCSubStringActivity"
             android:label="字符串相关"></activity>
+        <activity android:name=".JCCSubEncrypteActivity" android:label="加解密相关"/>
     </application>
 
 </manifest>
