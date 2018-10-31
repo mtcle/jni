@@ -1,29 +1,15 @@
 #include <jni.h>
 #include <string>
 
-//-----内部方法开始----
-char *jstringToChar(JNIEnv *env, jstring jstr) {
-    char *rtn = NULL;
-    jclass clsstring = env->FindClass("java/lang/String");
-    jstring strencode = env->NewStringUTF("UTF-8");
-    jmethodID mid = env->GetMethodID(clsstring, "getBytes", "(Ljava/lang/String;)[B");
-    jbyteArray barr = (jbyteArray) env->CallObjectMethod(jstr, mid, strencode);
-    jsize alen = env->GetArrayLength(barr);
-    jbyte *ba = env->GetByteArrayElements(barr, JNI_FALSE);
-    if (alen > 0) {
-        rtn = (char *) malloc(alen + 1);
-        memcpy(rtn, ba, alen);
-        rtn[alen] = 0;
-    }
-    env->ReleaseByteArrayElements(barr, ba, 0);
-    return rtn;
-}
+#include "utils.h"
 
-//--------内部方法结束---------
+
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject instance) {
-    std::string strInC = "C++中的字符串";//无参数，直接返回个c中的字符串给java使用
+    std::string strInC = "C++中的字符串";//无参数，直接返回个c中的字符串给java使用；
+    // std:: 代表使用模板，就是类？ 调用了string这个类，new了个strInC的对象
+            //基本类型的话 还是 int a=1； 这种方式定义
     return env->NewStringUTF(strInC.c_str());
 }
 
@@ -77,12 +63,7 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMeth(JNIEnv *env, jobject
     jobject result = env->CallObjectMethod(instance, method1);
     // 调用CallStaticObjectMethod方法会返回一个jobject对象，在前面弄个(jstring)就可以转换成jstring
     jstring resultStr = (jstring) result;
-
-    // jstring 转 char*
-    char *chardata = jstringToChar(env, resultStr);
-
-    // std::string strResult22 = chardata;
-    return env->NewStringUTF(chardata);
+    return resultStr;
 }
 
 
@@ -91,6 +72,8 @@ JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *env,
                                                                       jobject instance) {
 
+    LOGD("c中打印的日志");
+    LOGE("c中打印的日志error");
     // TODO
     std::string strNull = "[null]";
     //1 . 找到java代码的 class文件
