@@ -93,6 +93,6 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *en
     jstring resultStr = (jstring) result;
 
     // jstring 转 char*
-    char *chardata = jstringToChar(env, resultStr);
-    return env->NewStringUTF(chardata);
+   // char *chardata = jstringToChar(env, resultStr);
+    return resultStr;
 }
