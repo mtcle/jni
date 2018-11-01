@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.mtcle.jni.utils.MNativeUtil;
+
 public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClickListener {
 
 

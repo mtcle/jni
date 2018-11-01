@@ -2,9 +2,10 @@ package com.mtcle.jni;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+
+import com.mtcle.jni.utils.MNativeUtil;
 
 /**
  * 作者：Lenovo on 2018/10/26 15:07

@@ -1,4 +1,4 @@
-package com.mtcle.jni;
+package com.mtcle.jni.utils;
 
 import android.content.Context;
 import android.util.Log;

@@ -6,7 +6,7 @@
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject instance) {
+Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject instance) {
     std::string strInC = "C++中的字符串";//无参数，直接返回个c中的字符串给java使用；
     // std:: 代表使用模板，就是类？ 调用了string这个类，new了个strInC的对象
     //基本类型的话 还是 int a=1； 这种方式定义
@@ -15,7 +15,7 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject instance) {
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithParam(JNIEnv *env, jobject instance,
+Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithParam(JNIEnv *env, jobject instance,
                                                          jstring key_) {
     const char *key = env->GetStringUTFChars(key_, 0);
 
@@ -29,10 +29,10 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithParam(JNIEnv *env, jobject in
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMeth(JNIEnv *env, jobject instance) {
+Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMeth(JNIEnv *env, jobject instance) {
     std::string strNull = "[null]";
     //1 . 找到java代码的 class文件
-    jclass mNativeUtil = env->FindClass("com/mtcle/jni/MNativeUtil");// 参数就是java类的路径加上名字
+    jclass mNativeUtil = env->FindClass("com/mtcle/jni/utils/MNativeUtil");// 参数就是java类的路径加上名字
     if (mNativeUtil == 0) {
         // 找不到类，写错了？？注意包名，类名
         return env->NewStringUTF(strNull.c_str());
@@ -69,7 +69,7 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMeth(JNIEnv *env, jobject
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *env,
+Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *env,
                                                                       jobject instance) {
 
     LOGD("c中打印的日志");
@@ -77,7 +77,7 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *en
     // TODO
     std::string strNull = "[null]";
     //1 . 找到java代码的 class文件
-    jclass mNativeUtil = env->FindClass("com/mtcle/jni/MNativeUtil");// 参数就是java类的路径加上名字
+    jclass mNativeUtil = env->FindClass("com/mtcle/jni/utils/MNativeUtil");// 参数就是java类的路径加上名字
     if (mNativeUtil == 0) {
         // 找不到类，写错了？？注意包名，类名
         return env->NewStringUTF(strNull.c_str());
@@ -101,7 +101,7 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *en
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance, jobject context) {
+Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance, jobject context) {
 
     // TODO
     string key = getDefaultKey(env, instance, context);

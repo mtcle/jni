@@ -27,7 +27,6 @@ public class CerFingerprintsUtil {
 	 * </br>创建人：李满义</br>
 	 * 创建时间：2015-6-24 下午2:00:26
 	 * @param context
-	 * @param packageName
 	 * @return
 	 */
 	public static String getCerMD5(Context context) {
@@ -46,7 +45,6 @@ public class CerFingerprintsUtil {
 	 * </br>创建人：李满义</br>
 	 * 创建时间：2015-6-24 下午2:28:21
 	 * @param context
-	 * @param packageName
 	 * @return
 	 */
 	public static String getCerSHA1(Context context) {
