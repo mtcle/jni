@@ -1,5 +1,6 @@
 package com.mtcle.jni;
 
+import android.content.Context;
 import android.util.Log;
 
 /**
@@ -44,4 +45,6 @@ public class MNativeUtil {
         Log.e("mtcle", "java方法javaMWithP被调用！");
         return "java中文[c中参数:" + cParma + "、" + cParma2 + "]";
     }
+
+    public native String getDefaultKeyFromC(Context context);
 }

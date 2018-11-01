@@ -9,7 +9,7 @@ JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject instance) {
     std::string strInC = "C++中的字符串";//无参数，直接返回个c中的字符串给java使用；
     // std:: 代表使用模板，就是类？ 调用了string这个类，new了个strInC的对象
-            //基本类型的话 还是 int a=1； 这种方式定义
+    //基本类型的话 还是 int a=1； 这种方式定义
     return env->NewStringUTF(strInC.c_str());
 }
 
@@ -82,17 +82,28 @@ Java_com_mtcle_jni_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *en
         // 找不到类，写错了？？注意包名，类名
         return env->NewStringUTF(strNull.c_str());
     }
-    jmethodID method1 = env->GetMethodID(mNativeUtil, "javaMWithP", "(ILjava/lang/String;)Ljava/lang/String;");//java方法签名，括号内挨着写，第一个参数是int、第二个参数是object（String），括号外是返回值，object类型（String）
+    jmethodID method1 = env->GetMethodID(mNativeUtil, "javaMWithP",
+                                         "(ILjava/lang/String;)Ljava/lang/String;");//java方法签名，括号内挨着写，第一个参数是int、第二个参数是object（String），括号外是返回值，object类型（String）
     if (method1 == 0) {
         // 找不到类，写错了？？注意方法的名字
         return env->NewStringUTF(strNull.c_str());
     }
     std::string strP2 = "c中String参数";
-    jobject result = env->CallObjectMethod(instance, method1, 110, env->NewStringUTF(strP2.c_str()));
+    jobject result = env->CallObjectMethod(instance, method1, 110,
+                                           env->NewStringUTF(strP2.c_str()));
     // 调用CallStaticObjectMethod方法会返回一个jobject对象，在前面弄个(jstring)就可以转换成jstring
     jstring resultStr = (jstring) result;
 
     // jstring 转 char*
-   // char *chardata = jstringToChar(env, resultStr);
+    // char *chardata = jstringToChar(env, resultStr);
     return resultStr;
+}
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_mtcle_jni_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance, jobject context) {
+
+    // TODO
+    string key = getDefaultKey(env, instance, context);
+    return env->NewStringUTF(key.c_str());
 }

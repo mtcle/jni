@@ -1,10 +1,13 @@
 package com.mtcle.jni;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClickListener {
 
+
+    private MNativeUtil mNativeUtil = new MNativeUtil();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +27,9 @@ public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClick
                 //ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNI());
                 break;
             case R.id.btn_hash:
-               // ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("java参数"));
+                String strKey = mNativeUtil.getDefaultKeyFromC(JCCSubEncrypteActivity.this);
+                Log.d("mtcle", "返回的值：" + strKey);
+                ViewUtils.showToast(mContext, "秘钥：" + strKey);
                 break;
             case R.id.btn_aes:
                 // ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("java参数"));
