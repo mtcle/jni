@@ -12,7 +12,7 @@
             android:id="@+id/btn_md5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="简单md5" />
+            android:text="md5(32位小写)" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/btn_hash"

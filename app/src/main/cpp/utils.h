@@ -7,6 +7,7 @@
 #include <android/log.h>
 #include <string>
 #include "des.h"
+#include "MD5.h"
 
 using namespace std;
 #ifndef JNILEARNING_UTILS_H
@@ -30,4 +31,6 @@ bool getSha1(JNIEnv *env, jobject clz, jobject context_object, const char *local
 string desEncode(JNIEnv *env,jstring javastr,string key);
 
 string desDecode(JNIEnv *env,jstring javastr,string key);
+
+string md5(JNIEnv *env,jstring javastr);
 #endif //JNILEARNING_UTILS_H

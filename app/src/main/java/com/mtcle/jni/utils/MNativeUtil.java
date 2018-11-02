@@ -51,4 +51,7 @@ public class MNativeUtil {
     public native String desEncrypt(Context context,String string);
 
     public native String desDeEncrypt(Context context,String encryptString);
+
+    public native String md5Native(String content);
+
 }

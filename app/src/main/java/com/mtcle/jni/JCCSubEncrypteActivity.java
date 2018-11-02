@@ -31,7 +31,9 @@ public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_md5:
-                //ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNI());
+                String md5Result = mNativeUtil.md5Native("hello");
+                Log.d("mtcle", "md5:" + md5Result);
+                ViewUtils.showToast(mContext, "md5:" + md5Result);
                 break;
             case R.id.btn_hash:
                 String strKey = mNativeUtil.getDefaultKeyFromC(JCCSubEncrypteActivity.this);

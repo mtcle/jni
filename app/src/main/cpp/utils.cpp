@@ -3,6 +3,7 @@
 #include "utils.h"
 
 
+
 //
 // Created by Lenovo on 2018/10/31.
 //
@@ -178,16 +179,25 @@ string desEncode(JNIEnv *env, jstring javastr, string key) {
     return result;
 }
 
-string desDecode(JNIEnv *env,jstring javastr,string key){
+string desDecode(JNIEnv *env, jstring javastr, string key) {
     // jstring 转 char*
-    char* chardata = jstringToChar(env, javastr);
+    char *chardata = jstringToChar(env, javastr);
     // char* 转 string
     string origin = chardata;
     auto my3Des = new Des(key);
-    string result=my3Des->desDecrypt(origin);
+    string result = my3Des->desDecrypt(origin);
     if (result.length() == 0) {
         LOGE("解密出错");
         return "";
     }
     return result;
+}
+
+string md5(JNIEnv *env, jstring javastr) {
+    //将jstring转化成char *类型
+    char *chardata = jstringToChar(env, javastr);
+    MD5 md5 = MD5(chardata);
+    std::string md5Result = md5.hexdigest();
+    //将char *类型转化成jstring返回给Java层
+    return md5Result;
 }
