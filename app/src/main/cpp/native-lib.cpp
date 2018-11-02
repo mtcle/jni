@@ -1,6 +1,5 @@
 #include <jni.h>
 #include <string>
-
 #include "utils.h"
 
 
@@ -105,7 +104,7 @@ Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject ins
                                                         jobject context) {
 
     // TODO
-    string key = getDefaultKey(env, instance, context);
+    string key = getDefaultKey(env, instance, context);//获取到加密秘钥key
     //bool siRightSign = getSha1(env, instance, context);
     //LOGE("签名校验：");
     return env->NewStringUTF(key.c_str());
