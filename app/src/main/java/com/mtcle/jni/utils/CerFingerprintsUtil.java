@@ -18,7 +18,9 @@ import android.util.Log;
 /**
  * 描述：指纹获取
  * 创建时间：2015-6-24 下午2:48:22
+ * 已经启用，可以再native里面直接获取当前app的签名
  */
+@Deprecated
 public class CerFingerprintsUtil {
 
 	private static final long serialVersionUID = 119L;
