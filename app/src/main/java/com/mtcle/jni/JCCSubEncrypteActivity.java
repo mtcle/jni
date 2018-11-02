@@ -30,7 +30,7 @@ public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClick
                 break;
             case R.id.btn_hash:
                 String strKey = mNativeUtil.getDefaultKeyFromC(JCCSubEncrypteActivity.this);
-                Log.d("mtcle", "返回的值：" + strKey);
+                Log.d("mtcle", "返回的key：" + strKey);
                 ViewUtils.showToast(mContext, "秘钥：" + strKey);
                 break;
             case R.id.btn_aes:

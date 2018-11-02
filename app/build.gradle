@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'mtcleandroid'
+            keyPassword 'mtcleandroid'
+            storeFile file('D:/签名文件/as/mtcle_key_as.jks')
+            storePassword 'mtcleandroid'
+        }
+    }
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.mtcle.jni"
@@ -18,6 +26,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.config
+            renderscriptDebuggable false
         }
     }
     externalNativeBuild {

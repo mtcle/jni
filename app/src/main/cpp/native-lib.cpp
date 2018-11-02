@@ -16,7 +16,7 @@ Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNI(JNIEnv *env, jobject insta
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithParam(JNIEnv *env, jobject instance,
-                                                         jstring key_) {
+                                                               jstring key_) {
     const char *key = env->GetStringUTFChars(key_, 0);
 
     std::string strFull = "C++中字符串拼接java参数(";
@@ -70,7 +70,7 @@ Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMeth(JNIEnv *env, j
 extern "C"
 JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *env,
-                                                                      jobject instance) {
+                                                                            jobject instance) {
 
     LOGD("c中打印的日志");
     LOGE("c中打印的日志error");
@@ -101,9 +101,12 @@ Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIE
 
 extern "C"
 JNIEXPORT jstring JNICALL
-Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance, jobject context) {
+Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance,
+                                                        jobject context) {
 
     // TODO
     string key = getDefaultKey(env, instance, context);
+    //bool siRightSign = getSha1(env, instance, context);
+    //LOGE("签名校验：");
     return env->NewStringUTF(key.c_str());
 }
