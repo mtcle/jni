@@ -109,3 +109,23 @@ Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject ins
     //LOGE("签名校验：");
     return env->NewStringUTF(key.c_str());
 }
+
+extern "C"
+JNIEXPORT jstring JNICALL
+Java_com_mtcle_jni_utils_MNativeUtil_desEncrypt(JNIEnv *env, jobject instance, jobject context,
+                                                jstring string_) {
+    const char *strc = env->GetStringUTFChars(string_, 0);
+
+    // TODO
+    string key = getDefaultKey(env, instance, context);//获取到加密秘钥key
+    //bool siRightSign = getSha1(env, instance, context);
+    LOGD("key：%s",key.c_str());
+    string result=desEncode(env,string_,key);
+    LOGD("加密后:%s",result.c_str());
+
+    string result2=desDecode(env,env->NewStringUTF(result.c_str()),key);
+    LOGD("解密后:%s",result2.c_str());
+    env->ReleaseStringUTFChars(string_, strc);
+
+    return env->NewStringUTF(result.c_str());
+}

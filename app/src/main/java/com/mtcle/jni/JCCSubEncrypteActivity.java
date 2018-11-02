@@ -37,7 +37,9 @@ public class JCCSubEncrypteActivity extends BaseActivity implements View.OnClick
                 // ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("java参数"));
                 break;
             case R.id.btn_3des:
-                // ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("java参数"));
+                String str = mNativeUtil.desEncrypt(JCCSubEncrypteActivity.this, "hello");
+                Log.d("mtcle", "加密后：" + str);
+                ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("3des加密后：" + str));
                 break;
             case R.id.btn_rsa:
                 // ViewUtils.showToast(mContext, mNativeUtil.getStringFromJNIWithParam("java参数"));

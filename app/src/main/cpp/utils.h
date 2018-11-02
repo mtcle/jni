@@ -6,6 +6,7 @@
 #include <jni.h>
 #include <android/log.h>
 #include <string>
+#include "des.h"
 
 using namespace std;
 #ifndef JNILEARNING_UTILS_H
@@ -26,4 +27,7 @@ string getDefaultKey(JNIEnv *env, jobject arg, jobject mContext);
 
 bool getSha1(JNIEnv *env, jobject clz, jobject context_object, const char *localSha14App);
 
+string desEncode(JNIEnv *env,jstring javastr,string key);
+
+string desDecode(JNIEnv *env,jstring javastr,string key);
 #endif //JNILEARNING_UTILS_H
