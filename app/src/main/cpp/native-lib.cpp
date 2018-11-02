@@ -71,9 +71,6 @@ JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_utils_MNativeUtil_getStringFromJNIWithJavaMethWithCParma(JNIEnv *env,
                                                                             jobject instance) {
 
-    LOGD("c中打印的日志");
-    LOGE("c中打印的日志error");
-    // TODO
     std::string strNull = "[null]";
     //1 . 找到java代码的 class文件
     jclass mNativeUtil = env->FindClass("com/mtcle/jni/utils/MNativeUtil");// 参数就是java类的路径加上名字
@@ -103,10 +100,8 @@ JNIEXPORT jstring JNICALL
 Java_com_mtcle_jni_utils_MNativeUtil_getDefaultKeyFromC(JNIEnv *env, jobject instance,
                                                         jobject context) {
 
-    // TODO
     string key = getDefaultKey(env, instance, context);//获取到加密秘钥key
     //bool siRightSign = getSha1(env, instance, context);
-    //LOGE("签名校验：");
     return env->NewStringUTF(key.c_str());
 }
 
