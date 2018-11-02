@@ -39,7 +39,7 @@ public class MainTabActivity extends AppCompatActivity {
 
 
     static {
-        System.loadLibrary("native-lib");
+        System.loadLibrary("m-native");
     }
 
     @Override

@@ -49,4 +49,6 @@ public class MNativeUtil {
     public native String getDefaultKeyFromC(Context context);
 
     public native String desEncrypt(Context context,String string);
+
+    public native String desDeEncrypt(Context context,String encryptString);
 }
