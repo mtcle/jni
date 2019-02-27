@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_md5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="md5(32位小写)" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_hash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="根据请求者的sha1获取c中秘钥" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_aes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="做aes" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_3des"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3des加密" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_3des_jiemi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="3des解密" />
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_rsa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="做rsa" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:hint="请输入要加密的内容" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">jnilearning</string>
+    <string name="app_name">jni</string>
+    <string name="tab_text_1">Java调C</string>
+    <string name="tab_text_2">C调Java</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_jccsub_string">JCCSubStringActivity</string>
 </resources>
