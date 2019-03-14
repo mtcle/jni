@@ -17,7 +17,6 @@ import android.util.Log;
 
 /**
  * 描述：指纹获取
- * 创建时间：2015-6-24 下午2:48:22
  * 已经启用，可以再native里面直接获取当前app的签名
  */
 @Deprecated
@@ -26,8 +25,6 @@ public class CerFingerprintsUtil {
 	private static final long serialVersionUID = 119L;
 	/**
 	 * 描述：获取指纹MD5
-	 * </br>创建人：李满义</br>
-	 * 创建时间：2015-6-24 下午2:00:26
 	 * @param context
 	 * @return
 	 */
@@ -44,8 +41,6 @@ public class CerFingerprintsUtil {
 	}
 	/**
 	 * 描述：获取指纹SHA1
-	 * </br>创建人：李满义</br>
-	 * 创建时间：2015-6-24 下午2:28:21
 	 * @param context
 	 * @return
 	 */
@@ -76,12 +71,10 @@ public class CerFingerprintsUtil {
 	}
 	/**
 	 * 描述：获取指纹SHA1</br>
-	 * 创建人：李满义</br>
-	 * 创建时间：2015-6-24 下午2:11:49</br>
 	 * @param context
 	 * @param packageName
 	 * @return
-	 * @deprecated 网上找的方法，但是取出的值不对，use {@link getCerSHA1} instead.
+	 * @deprecated 网上找的方法，但是取出的值不对，use {@link com.mtcle.jni.utils.CerFingerprintsUtil#getCerSHA1} instead.
 	 */
 	@Deprecated
 	public static String getCerSHA1_X509(Context context, String packageName) {
